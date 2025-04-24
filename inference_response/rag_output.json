@@ -1,0 +1,149 @@
+{
+    "answer": "### Summary\nThe profit before tax excluding acquisition and integration costs was reported as \u00a3349 million according to both the Vector Search and Keyword Search methods. However, the Graph QA did not provide specific information on this metric.\n\n### Key Financial Metrics\n- **Profit Before Tax (Excluding Acquisition and Integration Costs)**: \u00a3349 million (Vector Search, Keyword Search)\n- **Reported Profit Before Tax**: \u00a3323 million (Vector Search, Keyword Search)\n- **Previous Year\u2019s Profit Before Tax**: \u00a3474 million (Vector Search, Keyword Search)\n\n### Limitations\nThe Graph QA did not provide a specific figure for profit before tax excluding acquisition and integration costs, indicating a gap in the data from that method.\n\n### Perspectives from Different Methods\n- **Graph QA**: Did not provide specific information regarding profit before tax excluding acquisition and integration costs.\n- **Vector Search**: Reported the profit before tax excluding acquisition and integration costs as \u00a3349 million.\n- **Keyword Search**: Also reported the profit before tax excluding acquisition and integration costs as \u00a3349 million.",
+    "graph_qa": {
+      "answer": "The query results do not provide specific information regarding profit before tax excluding acquisition and integration costs. The available data includes various financial metrics such as Common Equity Tier 1, UK Leverage Ratio, Net Interest Margin, Cost to Income Ratio, and Liquidity Coverage Ratio, all of which report profit before tax values of 28.0%, 5.7%, 1.07%, 54.0%, and 207%, respectively, along with monetary values of \u00a3323 million and \u00a3349 million.\n\nHowever, there is no direct mention of profit before tax excluding acquisition and integration costs in the provided results. Therefore, I cannot provide a specific figure for that metric based on the available data.",
+      "method": "graph_qa",
+      "execution_time": 10920.61,
+      "cypher_query": "cypher\nMATCH (doc:Document)-[:MENTIONS]->(fm:Financialmetric)\nWHERE toLower(doc.text) CONTAINS 'profit before tax'\n  AND NOT (doc)-[:MENTIONS]->(:Financialmetric {id: 'acquisition_cost'}) \n  AND NOT (doc)-[:MENTIONS]->(:Financialmetric {id: 'integration_cost'})\nOPTIONAL MATCH (doc)-[:MENTIONS]->(mv:Monetaryvalue)\nRETURN \n  doc.id AS document_id,\n  doc.page_number AS page_number,\n  doc.section AS section,\n  fm.id AS financial_metric_id,\n  fm.value AS profit_before_tax_value,\n  mv.value AS monetary_value\nORDER BY doc.page_number, doc.section\n",
+      "query_result": {
+        "context": [
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Common Equity Tier 1",
+            "profit_before_tax_value": "28.0%",
+            "monetary_value": "\u00a3323m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Common Equity Tier 1",
+            "profit_before_tax_value": "28.0%",
+            "monetary_value": "\u00a3349m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Uk Leverage Ratio",
+            "profit_before_tax_value": "5.7%",
+            "monetary_value": "\u00a3323m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Uk Leverage Ratio",
+            "profit_before_tax_value": "5.7%",
+            "monetary_value": "\u00a3349m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Net Interest Margin",
+            "profit_before_tax_value": "1.07%",
+            "monetary_value": "\u00a3323m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Net Interest Margin",
+            "profit_before_tax_value": "1.07%",
+            "monetary_value": "\u00a3349m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Cost To Income Ratio",
+            "profit_before_tax_value": "54.0%",
+            "monetary_value": "\u00a3323m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Cost To Income Ratio",
+            "profit_before_tax_value": "54.0%",
+            "monetary_value": "\u00a3349m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Liquidity Coverage Ratio",
+            "profit_before_tax_value": "207%",
+            "monetary_value": "\u00a3323m"
+          },
+          {
+            "document_id": "302bb0b59cad485974569a6580d028f7",
+            "page_number": 1,
+            "section": "Strategic Report",
+            "financial_metric_id": "Liquidity Coverage Ratio",
+            "profit_before_tax_value": "207%",
+            "monetary_value": "\u00a3349m"
+          }
+        ]
+      }
+    },
+    "vector": {
+      "answer": "The profit before tax excluding acquisition and integration costs was \u00a3349 million.\n\n### Additional Details:\n1. The reported profit before tax for the year was \u00a3323 million.\n2. The profit before tax excluding acquisition and integration costs reflects the financial performance of the organization without the impact of the costs associated with the acquisition of The Co-operative Bank.\n3. The reported figures indicate a decrease from the previous year's profit before tax of \u00a3474 million, highlighting the financial adjustments made during the acquisition process.\n\nThis information is derived from the Strategic Report section of the Coventry Building Society's Annual Report & Accounts for 2024.",
+      "method": "vector",
+      "execution_time": 3612.66,
+      "search_results": [
+        {
+          "section": "Strategic Report",
+          "content": "the needs of all of our customers and members, and ensuring the financial strength and stability of the combined Group. I believe the acquisition paves the way for an exciting future, one that builds on the shared mutual and co- operative values of our heritage to create a sustainable and differentiated type of financial services organisation, with members and customers at the heart of our decision- making. David Thorburn Chair of the Board 6 March 2025 Coventry Building Society | Annual Report & Accounts 2024 7 \"The Society is focused on consistently meeting the needs of its members and customers.\" A statement from our Chair continued Strategic Report",
+          "score": 0.6667535305023193
+        },
+        {
+          "section": "Strategic Report",
+          "content": "In July, we also welcomed Ewa Kerin, an experienced financial services executive, to the Board as a non- executive director. Very sadly, Ewa had to resign in November for family reasons, and we offer both Ewa and Vanessa our very best wishes for the future. In January 2025, Caroline Marsh joined our Board as a non- executive director. Caroline is a former financial services executive with extensive experience in UK retail banking and brings both product and operational expertise as well as Board experience. She will be chairing the Society's Remuneration Committee and will fulfil the same role at the Bank from April 2025. Mark Parker, an existing member of the Bank Board, also joined the Group Board with effect from January 2025. The acquisition of The Co-operative Bank has meant an extensive review of governance structures and arrangements. This is summarised on page 12 of this Annual Report. Board priorities for the year ahead In the coming year, we are anticipating further easing in the interest rate environment and believe this will support an increase in housing market activity. We will continue to work hard to balance the needs of our mortgage and savings members, and ensure we meet their expectations in terms of service and value. Having completed the acquisition of The Co-operative Bank in January 2025, we have begun the work to integrate the two organisations and deliver the benefits I have outlined. This work will take some years to complete, and our priorities in this time will be to meet the needs of all of our customers and members, and ensuring the financial strength and stability of the combined Group. I believe the acquisition paves the way for an exciting future, one that builds on the shared mutual and co- operative values of our heritage to create a sustainable and differentiated type of financial services organisation, with members and customers at the heart of our decision- making. David Thorburn Chair of the Board",
+          "score": 0.6585044860839844
+        },
+        {
+          "section": "Strategic Report",
+          "content": "STRATEGIC REPORT: Coventry Building Society | Annual Report & Accounts 2024 5 Strategic Report Capital ratios Sustainable financial performance 28.0% Common Equity Tier 1 (2023: 29.1%) 5.7% UK leverage ratio (2023: 5.4%) 1.07% Net interest margin (2023: 1.26%) 54.0% Cost to income ratio (2023: 39.4%) 207% Liquidity Coverage Ratio (2023: 227%) Low risk Profitability \u00a3323m Reported profit before tax (2023: \u00a3474m) \u00a3349m excluding acquisition & integration costs 0.57% Cost as a percentage of average assets (2023: 0.51%) 0.33% of mortgages more than 3 months in arrears (2023: 0.26%) Efficiency 1. Based on the Society\u2019s average month end savings rate compared to the CACI Ltd's Current Account and Savings Database rest of market average rate for savings accounts, excluding current accounts and offset savings, for the 12 months of the year. 2. A measure of customer advocacy that ranges between -100 and +100 representing how likely a customer is to recommend our products and services. 3. Based on average call waiting times between 1 January 2024 and 31 December 2024. 4. Total community investment made by the Society has been determined in line with the Business for Societal Impact (B4SI) framework. 5. A measure indicating a trust-based people first workplace based on positive responses to the annual Great Place to Work survey. Performance highlights continued",
+          "score": 0.6543376445770264
+        },
+        {
+          "section": "Strategic Report",
+          "content": "of their first home. Our priority is always to balance the interests of our savers and borrowers, while maintaining the Society's financial strength for the good of all members, current and future. The ability to plan for the long-term success of the Society has been at the heart of our transformational acquisition of The Co-operative Bank. Members' interests were central to this acquisition, which we completed on 1 January 2025. As we celebrate our 140th anniversary, we believe that this groundbreaking combination of ethical and purpose- led organisations is an opportunity to build, and future- proof, a bigger and better mutual building society for the benefit of all stakeholders. Steve, our Chief Executive, will talk more in his review about the rationale and implications of the acquisition and the integration plans that lie ahead. However, in listening to our members, it is clear that while they see the potential benefits of the acquisition, their immediate priority is that we maintain the strength of the Society's existing proposition, and particularly the outstanding service, value and security that they receive today. The Board and the Society's executive team are committed to meeting this expectation, and we believe that the Society's performance this year shows that this focus has been unaffected by the additional work required to make the acquisition a reality. Coventry Building Society | Annual Report & Accounts 2024 6 A statement from our Chair Strategic Report",
+          "score": 0.6533033847808838
+        },
+        {
+          "section": "Strategic Report",
+          "content": "STRATEGIC REPORT: Welcome to our 2024 Annual Report and Accounts. 2024 has become a milestone year for the Society. The year in which we celebrated our 140th anniversary was also the year we laid the foundations of a larger, more diversified and impactful business through the acquisition of The Co-operative Bank ('the Bank'). What links the two organisations is the clarity that mutuality provides in prioritising the long-term needs and interests of members. We have shown this in 2024, not simply by pursuing the transformational combination of the Society and the Bank, but by delivering value, service, security and the positive wider social impact that our members expect every day. In doing so, we have achieved a strong and sustainable financial and business performance that sets the combined organisation up for continued success in the future. During 2024, we grew savings and mortgages balances, increased the savings member premium once again to record levels, and delivered an outstanding service experience across our customer-facing channels. We also made considerable progress with our investment priorities, adding choice and convenience to members' interactions with us, and building efficiency and resilience into our operations and infrastructure. We delivered this during a year in which the external environment continued to confound commentators and industry forecasts alike. At the start of 2024, it was widely predicted that inflation would fall quickly within the Bank of England's target range, and that base rate could be cut as many as five times during the course of the year. Instead, continued geopolitical uncertainty, including elections in the UK and US, together with persistent inflation in the service sector and wages generally, meant that base rate was cut just twice, ending the year at 4.75%. The UK economy performed sluggishly during the year, and whilst it is understandable that the new",
+          "score": 0.6464691162109375
+        }
+      ]
+    },
+    "keyword": {
+      "answer": "The profit before tax excluding acquisition and integration costs was \u00a3349 million.\n\n### Additional Details:\n- The reported profit before tax for the year was \u00a3323 million, which is a decrease from \u00a3474 million in the previous year (2023).\n- The cost to income ratio increased to 54.0% from 39.4% in 2023, indicating a decline in efficiency.\n- The net interest margin decreased to 1.07% from 1.26% in 2023.\n- The liquidity coverage ratio also saw a decline, dropping to 207% from 227% in the previous year.\n- The cost as a percentage of average assets was 0.57%, up from 0.51% in 2023.\n- The percentage of mortgages more than 3 months in arrears increased to 0.33% from 0.26% in 2023.\n\nThese metrics provide a broader context for the financial performance of Coventry Building Society in the reported period.",
+      "method": "keyword",
+      "execution_time": 4811.96,
+      "search_results": [
+        {
+          "section": "Strategic Report",
+          "content": "STRATEGIC REPORT: Coventry Building Society | Annual Report & Accounts 2024 5 Strategic Report Capital ratios Sustainable financial performance 28.0% Common Equity Tier 1 (2023: 29.1%) 5.7% UK leverage ratio (2023: 5.4%) 1.07% Net interest margin (2023: 1.26%) 54.0% Cost to income ratio (2023: 39.4%) 207% Liquidity Coverage Ratio (2023: 227%) Low risk Profitability \u00a3323m Reported profit before tax (2023: \u00a3474m) \u00a3349m excluding acquisition & integration costs 0.57% Cost as a percentage of average assets (2023: 0.51%) 0.33% of mortgages more than 3 months in arrears (2023: 0.26%) Efficiency 1. Based on the Society\u2019s average month end savings rate compared to the CACI Ltd's Current Account and Savings Database rest of market average rate for savings accounts, excluding current accounts and offset savings, for the 12 months of the year. 2. A measure of customer advocacy that ranges between -100 and +100 representing how likely a customer is to recommend our products and services. 3. Based on average call waiting times between 1 January 2024 and 31 December 2024. 4. Total community investment made by the Society has been determined in line with the Business for Societal Impact (B4SI) framework. 5. A measure indicating a trust-based people first workplace based on positive responses to the annual Great Place to Work survey. Performance highlights continued",
+          "score": 1.0
+        }
+      ],
+      "keywords": [
+        "integration",
+        "before",
+        "profit",
+        "costs",
+        "was",
+        "acquisition",
+        "excluding",
+        "tax"
+      ]
+    },
+    "method": "combined",
+    "execution_time": 16979.36
+  }

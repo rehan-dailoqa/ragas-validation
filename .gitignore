@@ -1,0 +1,64 @@
+# Environment and configuration
+.env
+.envrc
+.venv/
+venv/
+env/
+.python-version
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data and logs
+data/financial_reports/*
+!data/financial_reports/processed/
+!data/financial_reports/processed/.gitkeep
+!data/financial_reports/.gitkeep
+logs/
+*.log
+delete/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+coverage.xml
+*.cover
+.hypothesis/
+
+# API keys and credentials
+*.key
+*.pem
+
+# Streamlit secrets
+.streamlit/secrets.toml
